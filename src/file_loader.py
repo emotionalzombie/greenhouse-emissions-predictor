@@ -1,4 +1,5 @@
 import pandas as pd
+from constants import NEEDED_COLUMNS
 
 class DataLoader:
     def __init__(self, path: str) -> None:
@@ -13,9 +14,8 @@ class DataLoader:
     def validate(self):
         if self._df is None:
             raise ValueError("сначала вызови load()")
-    
-        needed = ["airpol", "src_crf", "geo", "TIME_PERIOD", "OBS_VALUE", "unit"]
-        for col in needed:
+        
+        for col in NEEDED_COLUMNS:
             if col not in self._df.columns:
                  raise ValueError(f"колонка {col} не найдена")
         return self 
