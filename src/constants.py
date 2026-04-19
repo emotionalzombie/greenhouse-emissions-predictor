@@ -8,7 +8,8 @@ NEEDED_COLUMNS = ["airpol", "src_crf", "geo", "TIME_PERIOD", "OBS_VALUE", "unit"
 UNIT = "MIO_T"
 
 # путь к данным
-RAW_DATA_PATH = "data/raw/estat_env_air_gge_en_csv.gz"
+from pathlib import Path
+RAW_DATA_PATH = Path(__file__).parent.parent / "data/raw/estat_env_air_gge_en.csv.gz"
 
 # годы датасета
 MIN_YEAR = 1990
